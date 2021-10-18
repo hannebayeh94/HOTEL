@@ -1,0 +1,59 @@
+<div class="container" style="width: 100%;">
+  <div class="row">
+
+    <div class="col s12 m12 l12">
+      <h5>Reporte de habitaciónes</h5>
+    </div>
+
+    <div class="row">
+
+      <div class="input-field col s6">
+        <input id="since-date" type="text" class="datepicker" (change)="setDate($event)">
+        <label for="since-date">Desde la fecha</label>
+      </div>
+
+      <div class="input-field col s6">
+        <input id="until-date" type="text" class="datepicker" (change)="setDate($event)">
+        <label for="until-date">Hasta la fecha</label>
+      </div>
+
+      <div class="input-field col s12 m12 l12">
+        <button class="btn red white-text" (click)="send()">Ver reporte</button>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<div class="container" style="width: 97%;">
+  <div class="row">
+
+    <table class="responsive-table" style="border: 1px solid grey; border-radius: 7px;">
+      <thead>
+      <tr>
+        <th class="center red white-text">Habitación</th>
+        <th class="center red white-text">Cliente</th>
+        <th class="center red white-text">Teléfono</th>
+        <th class="center red white-text">Precio</th>
+        <th class="center red white-text">Días Hospedado</th>
+        <th class="center red white-text">Recepcionista</th>
+        <th class="center red white-text">Fecha</th>
+      </tr>
+      </thead>
+
+      <tbody *ngIf="reportArray.length > 0">
+      <tr *ngFor="let i of reportArray">
+        <td class="center">{{i.room}}</td>
+        <td class="center">{{i.client}}</td>
+        <td class="center">{{i.telephone}}</td>
+        <td class="center">{{i.price | number}}</td>
+        <td class="center">{{i.day}}</td>
+        <td class="center">{{i.id_reception}}</td>
+        <td class="center">{{i.date}}</td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>

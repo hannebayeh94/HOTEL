@@ -1,0 +1,95 @@
+<div class="container" style="width: 100%; overflow-y: scroll;" [style.height.px]="height">
+  <div class="row">
+
+    <div class="col s12 m12 l12">
+      <h5>Registrar un cliente</h5>
+    </div>
+
+    <form class="col s12" [formGroup]="formClient">
+
+      <div class="row" style="padding-bottom: 2em;">
+
+        <div class="input-field col s12 m6 l6">
+          <span>Nombre:</span>
+          <input id="name" type="text" [formControl]="formClient.controls['name']">
+        </div>
+
+        <div class="input-field col s12 m6 l6">
+          <span>Teléfono:</span>
+          <input id="telephone" type="number" [formControl]="formClient.controls['telephone']">
+        </div>
+
+        <div class="input-field col s12 m6 l6">
+          <span>Selecciona un tipo de documento:</span>
+          <select class="browser-default" id="type-document" name="type-document" [formControl]="formClient.controls['type_document']">
+            <option value="">Selecciona un tipo de documento</option>
+            <option value="1">Cedula de ciudadania</option>
+            <option value="2">Cedula de extranjeria</option>
+          </select>
+        </div>
+
+        <div class="input-field col s12 m6 l6">
+          <span>Cedula: </span>
+          <input id="identificationcard" type="text" [formControl]="formClient.controls['identificationcard']">
+        </div>
+
+        <div class="input-field col s12 m12 l12">
+          <span>Fecha de expedición:</span>
+          <input id="dateOfExpedition" type="text" class="validate datepicker" (change)="dateOn($event)" [formControl]="formClient.controls['date_of_expedition']">
+        </div>
+
+        <div class="col 12 m12 l12 input-field">
+          <h5>Procedencia:</h5>
+
+          <div class="row">
+            <div class="input-field col s12 m6 l6">
+              <span>Departamento:</span>
+              <select class="browser-default" id="deparment" (change)="departmentSelect($event)">
+                <option value=""></option>
+                <option *ngFor="let item of listaDepartamentos" value="{{item.id_departamento}}">{{item.departamento}}</option>
+              </select>
+            </div>
+
+            <div class="input-field col s12 m6 l6">
+              <span>Ciudad o municipio:</span>
+              <select class="browser-default" id="origin" name="origin" [formControl]="formClient.controls['origin']">
+                <option value=""></option>
+                <option *ngFor="let item of listaCiudadOMunicipios" value="{{item.id_municipio}}">{{item.municipio}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-field col s12 m12 l12">
+          <span>Habitación:</span>
+          <select class="browser-default" id="room" name="room" (change)="selectRoom($event)" [formControl]="formClient.controls['number_room']">
+            <option value=""></option>
+            <option *ngFor="let item of listRoom">{{item.number_room}}</option>
+          </select>
+        </div>
+
+        <div class="input-field col s12 m6 l6">
+          <span>Días:</span>
+          <select class="browser-default" id="days" name="days" [formControl]="formClient.controls['number_day']">
+            <option value=""></option>
+            <option *ngFor="let i of listNumber">{{i}}</option>
+          </select>
+        </div>
+
+        <div class="input-field col s12 m6 l6">
+          <span>Personas:{{persons!=0?persons:''}}</span>
+          <select class="browser-default" id="persons" name="persons" [formControl]="formClient.controls['number_persons']" (change)="selectPerson($event)">
+            <option value=""></option>
+            <option *ngFor="let i of listNumber">{{i}}</option>
+          </select>
+        </div>
+
+        <div class="col s12 m12 l12">
+          <a href="#" class="btn white-text black">Cancelar</a>
+          <button class="btn white-text black" style="margin: 0.7rem;" type="button" (click)="registryClient()">Registrar</button>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>

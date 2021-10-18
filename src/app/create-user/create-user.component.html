@@ -1,0 +1,60 @@
+<div class="container" style="width: 100%;">
+  <div class="row">
+    <div class="col s12">
+      <h5 class="black-text" style="font-family: Serif;">Crear usuario</h5>
+      <form [formGroup]="formCreateUser">
+
+        <div class="col s12 m6 l6 input-field">
+          <span class="black-text">Secciona el tipo de usuario:</span>
+          <select class="browser-default" id="type" name="type" [formControl]="formCreateUser.controls['type']">
+            <option value="" disabled selected>Selecciona el tipo de usuario</option>
+            <option value="super-root">Super usuario</option>
+            <option value="root">Usuario</option>
+          </select>
+        </div>
+
+        <div class="col s12 m6 l6 input-field">
+          <span class="black-text">Usuario:</span>
+          <input type="text" name="username" id="username" [formControl]="formCreateUser.controls['username']"/>
+        </div>
+
+        <div class="col s12 m6 l6 input-field">
+          <span class="black-text">Contraseña:</span>
+          <input type="password" name="password" id="password" [formControl]="formCreateUser.controls['password']"/>
+        </div>
+
+        <div class="col s12 m6 l6 input-field">
+          <span class="black-text">Nombre:</span>
+          <input type="text" name="name" id="name" [formControl]="formCreateUser.controls['nombre']"/>
+        </div>
+
+        <div class="col s12 m6 l6 input-field">
+          <span class="black-text">Apellidos:</span>
+          <input type="text" name="lastnames" id="lastnames" [formControl]="formCreateUser.controls['apellidos']"/>
+        </div>
+
+        <div class="col s12 m6 l6 input-field">
+          <span class="black-text">Cedula:</span>
+          <input type="number" name="identificationcard" id="identificationcard"
+                 [formControl]="formCreateUser.controls['cedula']"/>
+        </div>
+
+        <div class="col s12 m6 l6 input-field">
+          <span class="black-text">Correo:</span>
+          <input type="email" name="email" id="email" [formControl]="formCreateUser.controls['correo']"/>
+        </div>
+
+        <div class="col s12 m6 l6 input-field">
+          <span class="black-text">Teléfono:</span>
+          <input type="number" name="telephone" id="telephone" [formControl]="formCreateUser.controls['telefono']"/>
+        </div>
+
+        <div class="col s12">
+          <button class="btn white-text black save_room" style="border-radius:7px;" (click)="createUser()">Crear Usuario</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+

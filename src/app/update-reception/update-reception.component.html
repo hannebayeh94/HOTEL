@@ -1,0 +1,64 @@
+<div class="container" style="width: 100%;">
+  <div class="row">
+    <h5 class="black-text" style="font-family:serif; margin-left: 0.7%;">Actualizar el recepcionista</h5>
+
+    <div class="col s12 m12 l12 input-field">
+      <select class="browser-default select" (change)="selectReception($event)">
+        <option value="">Selecciona un recepcionista</option>
+        <option *ngFor="let item of receptionArray" value="{{item.id}}">{{item.nombre}} {{item.apellidos}}</option>
+      </select>
+    </div>
+
+
+    <form class="col s12" [formGroup]="formReception" *ngIf="seeReception">
+      <div class="row">
+
+        <div class="input-field col s6">
+          <span for="firstname">Nombre:</span>
+          <input id="firstname" name="firstname" type="text" class="validate input" [formControl]="formReception.controls['nombre']">
+        </div>
+
+        <div class="input-field col s6">
+          <span for="last_name">Apellido:</span>
+          <input id="last_name" type="text" class="validate input" [formControl]="formReception.controls['apellidos']">
+        </div>
+
+        <div class="input-field col s6">
+          <span for="telephone">Teléfono:</span>
+          <input id="telephone" type="number" class="validate input" [formControl]="formReception.controls['telefono']">
+        </div>
+
+        <div class="input-field col s6">
+          <span for="identificationcard">Cedula:</span>
+          <input id="identificationcard" type="number" class="validate" [formControl]="formReception.controls['cedula']">
+        </div>
+
+        <div class="input-field col s6">
+          <span for="dateOfBirth">Fecha de nacimiento:</span>
+          <input id="dateOfBirth" type="text" class="validate datepicker input" [formControl]="formReception.controls['fecha_nacimiento']">
+        </div>
+
+        <div class="input-field col s6">
+          <span for="email">Correo:</span>
+          <input id="email" type="email" class="validate input" [formControl]="formReception.controls['correo']">
+        </div>
+
+        <div class="input-field col s6">
+          <span for="dateOfContract">Fecha de contrato:</span>
+          <input id="dateOfContract" type="text" class="validate datepicker input" [formControl]="formReception.controls['fecha_contrato']">
+        </div>
+
+        <div class="input-field col s6">
+          <span for="salary">Salario:</span>
+          <input id="salary" type="number" class="validate input" [formControl]="formReception.controls['salario']">
+        </div>
+
+        <div class="col s12 m12 l12">
+          <button class="btn white-text black" type="button">Cancelar</button>
+          <button class="btn white-text black" style="margin: 0.7rem;" type="button" (click)="updateReception()">Aceptar</button>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>

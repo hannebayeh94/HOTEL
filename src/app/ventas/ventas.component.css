@@ -1,0 +1,21 @@
+#shopping-product{
+  cursor: pointer;
+}
+
+.btn-floating{
+  margin-top: 7px;
+}
+
+.container-quantity{
+  position: relative;
+}
+
+.borde{
+  border: 0.7px solid grey;
+}
+
+#quantity{
+  position: absolute;
+  left: 7.7%;
+  top: 0;
+}

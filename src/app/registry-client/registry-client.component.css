@@ -1,0 +1,20 @@
+select {
+  border: 0.7px solid grey!important;
+  border-radius: 7px!important;
+  height: 37px!important;
+}
+
+#type-document{
+  margin-top: -0.1%!important;
+}
+
+input {
+  border: 0.7px solid grey!important;
+  border-radius: 7px!important;
+  height: 37px!important;
+}
+
+
+label{
+  padding-left: 0.3rem;
+}

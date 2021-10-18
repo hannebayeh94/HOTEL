@@ -1,0 +1,19 @@
+<div class="container" style="width: 100%;">
+  <div class="row">
+    <div class="col s12 m12 l12">
+      <h4>Crear sección de producto</h4>
+    </div>
+    <form class="col s12">
+      <div class="row">
+
+        <div class="input-field col s12 m4 l4">
+          <input id="section-product" name="section-product" type="text" class="validate" [(ngModel)]="section">
+          <label for="section-product">Crear sección de producto:</label>
+        </div>
+        <div class="col s12 m12 l12">
+          <button class="btn black white-text" (click)="createSection()">Crear</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

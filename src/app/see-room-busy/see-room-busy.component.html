@@ -1,0 +1,59 @@
+<div class="container" style="width: 100%;">
+  <div class="row" style="padding: 1rem;">
+
+    <article class="col s12 m3 l3 modal-trigger" data-target="modal-host-client" *ngFor="let i of listRoom" (click)="openModal(i)" style="cursor: pointer;">
+      <div class="full-width center-align" style="border:0.4px solid #bdbdbd;">
+        <div class="tile">
+          <div class="tile-caption">
+            <span class="center-align" style="font-size:77px;font-family:serif;" id="id_<?=$num_cuarto?>">{{i.number_room}}</span>
+            <p class="center-align" style="font-family:serif; font-size: 27px; margin-top: -3%;">Precio:${{i.price | number}}</p>
+          </div>
+          <button class="btn tile-link waves-effect waves-light blue white-text"><small>Cuarto ocupado con
+            <b class="black" style="border-radius:57%; padding: 0.4rem;">{{i.number_persons}}</b>
+            Personas</small></button>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="row">
+    <!-- modal host client -->
+    <div id="modal-host-client" class="modal">
+      <div class="modal-content">
+        <h5 style="font-family: Serif; margin-left: 1.1%;">Ingresa la cedula</h5>
+
+        <div class="container">
+          <div class="row">
+
+            <div class="col s12 m12 l12">
+              <table>
+                <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Teléfono</th>
+                  <th>Cedula</th>
+                  <th>Tiempo restante del hospedaje</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                  <td>{{client.name}}</td>
+                  <td>{{client.telephone}}</td>
+                  <td>{{client.identificationcard}}</td>
+                  <td><div class="countdown" simpleCountdown [dateTo]="1606726310135" [endMessage]="'Hospedaje finalizado'"></div></td>
+                </tr>
+                </tbody>
+              </table>
+              <button class="btn green white-text right modal-close" (click)="freeRoom()">Liberar habitación</button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

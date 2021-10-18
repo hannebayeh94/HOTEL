@@ -1,0 +1,59 @@
+<div class="container" style="width: 100%;">
+  <div class="row">
+
+    <div class="col s12 m12 l12">
+      <h5>Reporte de ventas</h5>
+    </div>
+
+    <div class="row">
+
+      <div class="input-field col s6">
+        <input id="since-date" type="text" class="datepicker" (change)="setDate($event)">
+        <label for="since-date">Desde la fecha</label>
+      </div>
+
+      <div class="input-field col s6">
+        <input id="until-date" type="text" class="datepicker" (change)="setDate($event)">
+        <label for="until-date">Hasta la fecha</label>
+      </div>
+
+      <div class="input-field col s12 m12 l12">
+        <button class="btn blue white-text" (click)="send()">Ver reporte</button>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<div class="container" style="width: 97%;">
+  <div class="row">
+
+    <table class="responsive-table" style="border: 1px solid grey; border-radius: 7px;">
+
+      <thead>
+      <tr>
+        <th class="center blue white-text">Producto</th>
+        <th class="center blue white-text">Cantidad</th>
+        <th class="center blue white-text">Tipo de venta</th>
+        <th class="center blue white-text">Habitación</th>
+        <th class="center blue white-text">Recepcionista</th>
+        <th class="center blue white-text">Fecha</th>
+      </tr>
+      </thead>
+
+      <tbody *ngIf="reportArray.length > 0">
+      <tr *ngFor="let item of reportArray">
+        <td class="center">{{item.name}}</td>
+        <td class="center">{{item.quantity}}</td>
+        <td class="center">{{item.type_sales}}</td>
+        <td class="center">{{item.room}}</td>
+        <td class="center">{{item.reception}}</td>
+        <td class="center">{{item.date}}</td>
+      </tr>
+      </tbody>
+
+    </table>
+
+  </div>
+</div>

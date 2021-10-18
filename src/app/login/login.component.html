@@ -1,0 +1,22 @@
+<div class="container" id="login" style="width: 100%!important;" [style.height.px]="height">
+  <div class="container-login center-align row white">
+
+    <div style="margin:15px 0;">
+      <i class="material-icons large">account_circle</i>
+      <p class="grey-text">Inicia sesión con tu cuenta</p>
+    </div>
+    <form [formGroup]="formLogin">
+      <div class="input-field">
+        <input type="text" name="name" [formControl]="formLogin.controls['username']">
+        <label><i class="material-icons">account_circle</i>&nbsp; Usuario:</label>
+      </div>
+      <div class="input-field col s12">
+        <input id="hotel_pass" type="password" name="password" [formControl]="formLogin.controls['password']">
+        <label><i class="material-icons">lock_outline</i>&nbsp; Contraseña:</label>
+      </div>
+      <button class="btn black-text white" id="btn-send" (click)="sendLogin()">Ingresar &nbsp; <i class="material-icons">send</i></button>
+    </form>
+    <div class="divider" style="margin: 20px 0;"></div>
+
+  </div>
+</div>

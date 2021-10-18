@@ -1,0 +1,11 @@
+input {
+  border: 0.7px solid grey!important;
+  border-radius: 7px!important;
+  height: 37px!important;
+}
+
+select {
+  border: 0.7px solid grey!important;
+  border-radius: 7px!important;
+  height: 37px!important;
+}

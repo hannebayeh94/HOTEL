@@ -1,0 +1,68 @@
+<div class="container" style="border:1px solid red; width: 100%;">
+  <div class="row">
+    <div class="col s12 red darken-1">
+      <div class="col s4 input-field">
+        <span class="white-text" style="margin-left:1em;">Servicio al Cuarto:</span>
+        <select class="browser-default white select_rom" style="border-radius:7px;height:34px; margin-left:1em;" (change)="selectRoom($event)">
+          <option value=""></option>
+          <option *ngFor="let i of listRoom" value="{{i.number_room}}">{{i.number_room}}</option>
+        </select>
+      </div>
+      <input type="text" name="nom_rom" id="nom_rom" class="nom_rom" style="display:none;">
+      <div class="col s4 input-field">
+        <span class="white-text" style="margin-left:4em;">Buscar:</span>
+        <input type="search" id="buscar_pro" name="buscar_pro" class="white buscar_pro" (keyup)="searchProduct($event)" style="border-radius:7px;height:34px; margin-left:4em;">
+      </div>
+      <div class="col s12 red-text">.</div>
+      <div class="col s12 white caja_productos" style="overflow:scroll;" [style.height.px]="height">
+
+        <ul class="collection">
+          <!-- option one -->
+          <li class="collection-item avatar modal-close black modal-trigger" id="shopping-product" data-target="modal-shopping-product" *ngFor="let i of listProd" (click)= "selectProduct(i)">
+            <img src="./assets/hotel.png" alt="" class="circle">
+            <span class="title white-text">{{i.title}}</span>
+            <p class="white-text">${{i.price | number}}</p>
+            <a class="secondary-content"><i class="material-icons white-text" style="cursor: pointer;">shopping_cart</i></a>
+          </li>
+          <!-- option two -->
+        </ul>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div id="modal-shopping-product" class="modal">
+  <div class="modal-content">
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col s12 m12 l12" style="border-bottom: 0.7px solid grey;">
+          <h5>{{product.title}}:{{quantity}} - precio:{{product.price * quantity | number}}</h5>
+        </div>
+
+        <div class="col s12 m12 l12">
+          <div class="row">
+
+            <div class="col s2 m1 l1">
+              <a class="btn-floating btn-small waves-effect waves-light red btn-floating"><i class="material-icons" id="add" (click)="add($event)">add</i></a>
+            </div>
+
+            <div class="col s2 m1 l1"  style="margin-left: -1.7%!important;">
+              <a class="btn-floating btn-small waves-effect waves-light red btn-floating"><i class="material-icons" id="remove" (click)="add($event)">remove</i></a>
+            </div>
+
+            <div class="col s2 m1 l1">
+              <a class="btn waves-effect waves-light red" style="height: 30px; margin-top: 21.7%;" (click)="tosell()">Vender</a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

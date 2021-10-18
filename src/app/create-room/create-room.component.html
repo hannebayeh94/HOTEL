@@ -1,0 +1,27 @@
+<div class="container" style="width: 100%;">
+  <div class="row">
+    <div class="col s12">
+      <h5 class="black-text" style="font-family: Serif;">Crear una Habitacion</h5>
+      <form [formGroup]="formRoom">
+        <div class="col s4 input-field">
+          <span class="black-text">Escribe el Numero de La Habitacion:</span>
+          <input type="text" name="num_room" id="num_room" [formControl]="formRoom.controls['number_room']" />
+        </div>
+        <div class="col s4 input-field">
+          <span class="black-text">Escribe el Numero de Personas:</span>
+          <input type="number" name="num_personas" id="num_personas" [formControl]="formRoom.controls['number_persons']" />
+        </div>
+        <div class="col s4 input-field">
+          <span class="black-text">Escribe el Precio:</span>
+          <input type="number" name="precio_room" id="precio_room" [formControl]="formRoom.controls['price']" />
+        </div>
+
+        <div class="col s12">
+          <button class="btn white-text black save_room" style="border-radius:7px;" (click)="createRoom()">Crear Habitacion</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+

@@ -1,0 +1,15 @@
+input{
+  border: 0.7px solid grey!important;
+  border-radius: 7px!important;
+  height: 37px!important;
+}
+
+label{
+  padding-left: 0.3rem;
+}
+
+select {
+  border: 0.7px solid grey!important;
+  border-radius: 7px!important;
+  height: 37px!important;
+}
