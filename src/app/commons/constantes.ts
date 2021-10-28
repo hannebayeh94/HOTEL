@@ -6,5 +6,4 @@ export class Constantes {
     fieldTypeUser: 'El campo del tipo de usuario es necesario',
     errorOfRegistry: 'Error al registrar'
   }
-
 }
