@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
     this._login.sendLogin(this.formLogin.value).subscribe((data: any) => {
       if (data.data) {
         localStorage.setItem('user', JSON.stringify(data.user));
-        this.route.navigate(['pages/home']);
+        this.route.navigate(['home/dashboard']);
       } else {
         Swal.fire({
           title: 'Error de acceso!',
@@ -55,10 +55,10 @@ export class LoginComponent implements OnInit {
 
   loadUser() {
     let user: any = localStorage.getItem('user');
-    if (user !== 'undefined') {
+    if (user) {
       user = JSON.parse(user);
       if (user.data) {
-        this.route.navigate(['home']);
+        this.route.navigate(['']);
       }
     } else {
       this.route.navigate(['']);
